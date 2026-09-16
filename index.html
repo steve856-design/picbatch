@@ -1154,8 +1154,9 @@ try{
     ati.rel='apple-touch-icon'; ati.href='icon-192.png';
     document.head.appendChild(ati);
   }
-  if ('serviceWorker' in navigator && location.protocol!=='file:')
-    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  // Service Worker 已停用：离线缓存会导致用户拿不到新版，旧 SW 由根目录 sw.js 自动注销
+  // if ('serviceWorker' in navigator && location.protocol!=='file:')
+  //   navigator.serviceWorker.register('sw.js').catch(()=>{});
 }catch(e){}
 
 /* ---------- 初始化 ---------- */
